@@ -210,7 +210,7 @@ export default function () {
   let newSlidesGrid;
 
   if (
-    rtl && wrongRTL && (params.effect === 'slide' || params.effect === 'coverflow')) {
+    rtl && wrongRTL && (params.effect === 'slide' || params.effect === 'coverflow' || params.effect === 'channel')) {
     $wrapperEl.css({ width: `${swiper.virtualSize + params.spaceBetween}px` });
   }
   if (params.setWrapperSize) {
