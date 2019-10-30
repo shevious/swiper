@@ -6,6 +6,18 @@ const Channel = {
   setTranslate(translate) {
     const swiper = this;
     const {
+      slides, rtlTranslate: rtl, params, $wrapperEl, wrapperEl, progress,
+    } = swiper;
+    console.log("shift of wrapper component = ", translate);
+    console.log("total slide number = ", slides.length);
+    for (let i = 0; i < slides.length; i += 1) {
+      const $slideEl = slides.eq(i);
+      let progress = $slideEl[0].progress;
+      console.log("i = ", i, "progress = ", progress);
+    }
+/*
+    const swiper = this;
+    const {
       rtlTranslate: rtl, params, $wrapperEl, wrapperEl, progress,
     } = swiper;
     let x = 0;
@@ -28,6 +40,7 @@ const Channel = {
     } else if (!params.virtualTranslate) {
       $wrapperEl.transform(`translate3d(${x}px, ${y}px, ${z}px)`);
     }
+*/
   },
   setTransition(duration) {
     const swiper = this;
@@ -69,10 +82,10 @@ export default {
       swiper.params.watchSlidesProgress = true;
       swiper.originalParams.watchSlidesProgress = true;
     },
-    setTranslate() {
+    setTranslate(translate) {
       const swiper = this;
       if (swiper.params.effect !== 'channel') return;
-      swiper.channelEffect.setTranslate();
+      swiper.channelEffect.setTranslate(translate);
     },
     setTransition(duration) {
       const swiper = this;

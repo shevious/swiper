@@ -19,6 +19,7 @@ module.exports = {
     'effect-flip',
     'effect-coverflow',
     'effect-channel',
+    'effect-book',
     'thumbs',
   ],
   themeColor: '#007aff',
